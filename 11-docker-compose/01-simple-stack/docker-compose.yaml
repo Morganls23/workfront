@@ -24,6 +24,7 @@ services:
       - 9999:9999
     networks:
       - pingnet
+    restart: always
 
   pingdirectory:
     image: pingidentity/pingdirectory:${PING_IDENTITY_DEVOPS_TAG}
@@ -41,6 +42,7 @@ services:
       - 1443:443
     networks:
       - pingnet
+    restart: always
 
   pingdataconsole:
     image: pingidentity/pingdataconsole:${PING_IDENTITY_DEVOPS_TAG}
@@ -49,6 +51,7 @@ services:
       - 8443:8443
     networks:
       - pingnet
+    restart: always
 
 networks:
     pingnet:
